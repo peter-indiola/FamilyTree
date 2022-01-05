@@ -128,6 +128,16 @@ class FamilyManager {
     return mother ? this.getBrothers(mother) : null;
   }
 
+  getPaternalUncle(name) {
+    const father = this.getFatherName(name);
+    return father ? this.getBrothers(father) : null;
+  }
+
+  getPaternalAunt(name) {
+    const father = this.getFatherName(name);
+    return father ? this.getSisters(father) : null;
+  }
+
   getSisters(name) {
     const siblings = this.getSiblings(name);
     return siblings.filter((s) => this.genderList[s] !== "m");

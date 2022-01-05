@@ -72,8 +72,18 @@ describe("Family Manager", () => {
     assert.equal(siblings, "dominique");
   });
 
-  it("return maternal uncle", () => {
+  it("returns maternal uncles", () => {
     const uncles = manager.getRelationship("james", "Maternal-Uncle");
     assert.equal(uncles, "bill charlie percy ronald");
+  });
+
+  it("returns paternal uncles", () => {
+    const uncles = manager.getRelationship("william", "Paternal-Uncle");
+    assert.equal(uncles, "albus");
+  });
+
+  it("returns paternal aunts", () => {
+    const uncles = manager.getRelationship("william", "Paternal-Aunt");
+    assert.equal(uncles, "lily");
   });
 });
