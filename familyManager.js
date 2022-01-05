@@ -47,12 +47,9 @@ class FamilyManager {
       ["ronald", "helen"],
       ["ginerva", "harry"],
       ["victorie", "ted"],
-      ["molly", "lucy"],
       ["malfoy", "rose"],
       ["darcy", "james"],
       ["alice", "albus"],
-      ["draco", "aster"],
-      ["ron", "ginny"],
     ];
 
     //{ key: []}
