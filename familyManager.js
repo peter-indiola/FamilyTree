@@ -140,12 +140,31 @@ class FamilyManager {
 
   getSisterInLaw(name) {
     const spouse = this.getSpouseName(name);
-    return spouse ? this.getSisters(spouse) : null;
+
+    if (spouse) {
+      return this.getSisters(spouse);
+    } else if (!spouse) {
+      let siblings = this.getSiblings(name);
+
+      siblings = siblings.map((s) => this.getSpouseName(s));
+      return siblings.filter((s) => s);
+    }
+    return null;
   }
 
   getBrotherInLaw(name) {
     const spouse = this.getSpouseName(name);
-    return spouse ? this.getBrothers(spouse) : null;
+
+    if (spouse) {
+      return this.getBrothers(spouse);
+    } else if (!spouse) {
+      let siblings = this.getSiblings(name);
+
+      siblings = siblings.map((s) => this.getSpouseName(s));
+      return siblings.filter((s) => s);
+    }
+
+    return null;
   }
 
   getSisters(name) {
