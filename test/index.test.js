@@ -66,4 +66,9 @@ describe("Family Manager", () => {
     const siblings = manager.getRelationship("remus", "Maternal-Aunt");
     assert.equal(siblings, "dominique");
   });
+
+  it("return maternal uncle", () => {
+    const uncles = manager.getRelationship("james", "Maternal-Uncle");
+    assert.equal(uncles, "bill charlie percy ronald");
+  });
 });

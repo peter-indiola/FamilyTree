@@ -56,7 +56,11 @@ class FamilyManager {
     this.childList = {
       margret: ["bill", "charlie", "percy", "ronald", "ginerva"],
       flora: ["victoire", "dominique", "louis"],
+      ginerva: ["james", "albus", "lily"],
       victoire: ["remus"],
+      rose: ["draco", "aster"],
+      darcy: ["william"],
+      alice: ["ron", "ginny"],
     };
   }
 
@@ -119,9 +123,19 @@ class FamilyManager {
     return mother ? this.getSisters(mother) : null;
   }
 
+  getMaternalUncle(name) {
+    const mother = this.getMotherName(name);
+    return mother ? this.getBrothers(mother) : null;
+  }
+
   getSisters(name) {
     const siblings = this.getSiblings(name);
     return siblings.filter((s) => this.genderList[s] !== "m");
+  }
+
+  getBrothers(name) {
+    const siblings = this.getSiblings(name);
+    return siblings.filter((s) => this.genderList[s] !== "f");
   }
 
   getSiblings(name) {
