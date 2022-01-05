@@ -1,4 +1,4 @@
-const FamilyManager = require("../main");
+const FamilyManager = require("../familyManager");
 const assert = require("assert");
 
 describe("Family Manager", () => {
