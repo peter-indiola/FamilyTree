@@ -8,6 +8,20 @@ describe("Family Manager", () => {
     manager = new FamilyManager();
   });
 
+  context("Person Not Found", () => {
+    it("return the proper message", () => {
+      const person = manager.getRelationship("foobar", "Siblings");
+      assert.equal(person, "PERSON_NOT_FOUND");
+    });
+  });
+
+  context("No Relationship(s) - NONE", () => {
+    it("returns the proper message", () => {
+      const person = manager.getRelationship("louis", "Siblings");
+      assert.equal(person, "NONE");
+    });
+  });
+
   it("returns the mother name", () => {
     const mother = manager.getRelationship("bill", "Mother-Name");
     assert.equal(mother, "margret");
