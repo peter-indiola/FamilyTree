@@ -65,7 +65,9 @@ class FamilyManager {
   }
 
   addChild(parentName, childName, gender) {
-    if (this.genderList[parentName] === "f") {
+    const spouse = this.getSpouseName(parentName);
+
+    if (spouse && this.genderList[parentName] === "f") {
       this.genderList[childName] = gender;
       this.childList[parentName].push(childName);
       const mother = this.getMotherName(childName);

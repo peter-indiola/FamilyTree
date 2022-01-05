@@ -32,7 +32,10 @@ describe("Family Manager", () => {
     });
 
     it("can't a child", () => {
-      const status = manager.addChild("ted", "peter", "m");
+      let status = manager.addChild("ted", "peter", "m");
+      assert.equal(status, "CHILD_ADDITION_FAILED");
+
+      status = manager.addChild("lily", "peter", "m");
       assert.equal(status, "CHILD_ADDITION_FAILED");
     });
   });
