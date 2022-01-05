@@ -22,6 +22,21 @@ describe("Family Manager", () => {
     });
   });
 
+  context("Add Child", () => {
+    it("can add a child", () => {
+      const status = manager.addChild("flora", "peter", "m");
+      assert.equal(status, "CHILD_ADDITION_SUCCESS");
+
+      const son = manager.getRelationship("flora", "Son");
+      assert.equal(son, "peter");
+    });
+
+    it("can't a child", () => {
+      const status = manager.addChild("ted", "peter", "m");
+      assert.equal(status, "CHILD_ADDITION_FAILED");
+    });
+  });
+
   it("returns the mother name", () => {
     const mother = manager.getRelationship("bill", "Mother-Name");
     assert.equal(mother, "margret");

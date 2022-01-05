@@ -8,7 +8,7 @@ class FamilyManager {
       arthur: "m",
       margret: "f",
       bill: "m",
-      flora: "m",
+      flora: "f",
       charlie: "m",
       percy: "m",
       audrey: "f",
@@ -62,6 +62,19 @@ class FamilyManager {
       flora: ["victoire", "dominique"],
       victorie: ["remus"],
     };
+  }
+
+  addChild(parentName, childName, gender) {
+    if (this.genderList[parentName] === "f") {
+      this.genderList[childName] = gender;
+      this.childList[parentName].push(childName);
+      const mother = this.getMotherName(childName);
+      if (mother === parentName) {
+        return "CHILD_ADDITION_SUCCESS";
+      }
+    }
+
+    return "CHILD_ADDITION_FAILED";
   }
 
   getRelationship(name, relation) {
