@@ -143,6 +143,21 @@ class FamilyManager {
     return mother ? this.childList[mother].filter((c) => c !== name) : null;
   }
 
+  getSpouseName(name) {
+    let couple =
+      this.couplesList.filter((couple) => couple.indexOf(name) > -1)[0] || null;
+    if (couple) {
+      return name === couple[0] ? couple[1] : couple[0];
+    }
+    return null;
+  }
+
+  getFatherName(name) {
+    const mother = this.getMotherName(name);
+    const father = mother ? this.getSpouseName(mother) : null;
+    return father;
+  }
+
   getMotherName(name) {
     for (let mother in this.childList) {
       if (this.childList[mother].indexOf(name) > -1) {

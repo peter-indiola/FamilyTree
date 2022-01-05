@@ -42,6 +42,11 @@ describe("Family Manager", () => {
     assert.equal(mother, "margret");
   });
 
+  it("returns the father name", () => {
+    const father = manager.getRelationship("james", "Father-Name");
+    assert.equal(father, "harry");
+  });
+
   it("returns the siblings", () => {
     const siblings = manager.getRelationship("bill", "Siblings");
     assert.equal(siblings, "charlie percy ronald ginerva");
