@@ -60,7 +60,7 @@ class FamilyManager {
     this.childList = {
       margret: ["bill", "charlie", "percy", "ronald", "ginerva"],
       flora: ["victoire", "dominique"],
-      victorie: ["remus"],
+      victoire: ["remus"],
     };
   }
 
@@ -121,6 +121,11 @@ class FamilyManager {
   getMaternalAunt(name) {
     const mother = this.getMotherName(name);
     return mother ? this.getSisters(mother) : null;
+  }
+
+  getSisters(name) {
+    const siblings = this.getSiblings(name);
+    return siblings.filter((s) => this.genderList[s] !== "m");
   }
 
   getSiblings(name) {

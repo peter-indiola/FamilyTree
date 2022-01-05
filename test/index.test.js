@@ -61,4 +61,9 @@ describe("Family Manager", () => {
     const siblings = manager.getRelationship("bill", "Siblings");
     assert.equal(siblings, "charlie percy ronald ginerva");
   });
+
+  it("returns maternal aunts", () => {
+    const siblings = manager.getRelationship("remus", "Maternal-Aunt");
+    assert.equal(siblings, "dominique");
+  });
 });
