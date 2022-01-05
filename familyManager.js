@@ -46,7 +46,7 @@ class FamilyManager {
       ["percy", "audrey"],
       ["ronald", "helen"],
       ["ginerva", "harry"],
-      ["victorie", "ted"],
+      ["victoire", "ted"],
       ["malfoy", "rose"],
       ["darcy", "james"],
       ["alice", "albus"],
@@ -136,6 +136,12 @@ class FamilyManager {
   getPaternalAunt(name) {
     const father = this.getFatherName(name);
     return father ? this.getSisters(father) : null;
+  }
+
+  getSisterInLaw(name) {
+    const spouse = this.getSpouseName(name);
+    this.getSisters(spouse);
+    return spouse ? this.getSisters(spouse) : null;
   }
 
   getSisters(name) {
