@@ -47,7 +47,6 @@ class FamilyManager {
       ["ronald", "helen"],
       ["ginerva", "harry"],
       ["victorie", "ted"],
-      ["dominique", "louis"],
       ["molly", "lucy"],
       ["malfoy", "rose"],
       ["darcy", "james"],
@@ -59,7 +58,7 @@ class FamilyManager {
     //{ key: []}
     this.childList = {
       margret: ["bill", "charlie", "percy", "ronald", "ginerva"],
-      flora: ["victoire", "dominique"],
+      flora: ["victoire", "dominique", "louis"],
       victoire: ["remus"],
     };
   }

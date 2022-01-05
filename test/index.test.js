@@ -17,7 +17,7 @@ describe("Family Manager", () => {
 
   context("No Relationship(s) - NONE", () => {
     it("returns the proper message", () => {
-      const person = manager.getRelationship("louis", "Siblings");
+      const person = manager.getRelationship("ted", "Siblings");
       assert.equal(person, "NONE");
     });
   });
@@ -28,7 +28,7 @@ describe("Family Manager", () => {
       assert.equal(status, "CHILD_ADDITION_SUCCESS");
 
       const son = manager.getRelationship("flora", "Son");
-      assert.equal(son, "peter");
+      assert.equal(son, "louis peter");
     });
 
     it("can't a child", () => {
