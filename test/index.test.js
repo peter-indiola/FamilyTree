@@ -91,4 +91,9 @@ describe("Family Manager", () => {
     const sistersInLaw = manager.getRelationship("ted", "Sister-In-Law");
     assert.equal(sistersInLaw, "dominique");
   });
+
+  it("returns brother in law", () => {
+    const brotherInLaw = manager.getRelationship("ted", "Brother-In-Law");
+    assert.equal(brotherInLaw, "louis");
+  });
 });
